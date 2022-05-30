@@ -41,20 +41,38 @@ const pokedex =[
 }
 ];
 
-
+let pokemon = undefined;
 
 //Rotas
 app.get('/', function (req, res) {
-  res.render("index", {pokedex});
+    
+  res.render("index", {pokedex, pokemon});
 });
 
-app.post("/add", (req, res) => {
-    const pokemon=req.body;
 
+app.post("/add", (req, res) => {
+    pokemon=req.body;
+    pokemon.numero = pokedex.length + 1;
     pokedex.push(pokemon);
 
     res.redirect("/");
-    
+
+});
+
+app.get("/detalhes/:numero", (req,res)=>{
+    const numero= +req.params.numero;
+    pokemon = pokedex.find((pokemon) => pokemon.numero===numero);
+    res.redirect("/");
+})
+
+app.post("/update/:numero", (req, res) => {
+    const numero= +req.params.numero-1;
+    const newPokemon = req.body;
+    newPokemon.numero=numero+1;
+    pokedex[numero]=newPokemon;
+    pokemon=undefined;
+    res.redirect("/");
+
 });
 
 app.listen(3000, ()=> 
