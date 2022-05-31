@@ -58,14 +58,14 @@ app.post("/add", (req, res) => {
     pokemon.numero = pokedex.length + 1;
     pokedex.push(pokemon);
     res.redirect("/#card");
-
+    
 });
 
 app.get("/detalhes/:numero", (req,res)=>{
     const numero= +req.params.numero;
     pokemon = pokedex.find((pokemon) => pokemon.numero===numero);
     res.redirect("/#cadastro");
-})
+});
 
 app.post("/update/:numero", (req, res) => {
     const numero= +req.params.numero-1;

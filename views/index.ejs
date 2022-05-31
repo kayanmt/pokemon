@@ -24,7 +24,7 @@
         <section id="cadastro">
 
             <img src="/img/pokedex.png" alt="Pokedex">
-            <div>
+             <div>
 
                 <% if (pokemon==undefined) { %>
                     <h2>Cadastre um novo pokemon</h2>
@@ -32,13 +32,13 @@
                     <form action="/add" method="POST">
         
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome">
+                        <input type="text" id="nome" name="nome" required>
         
                         <label for="imagem">Link da imagem:</label>
-                        <input type="text" id="imagem" name="imagem">
+                        <input type="text" id="imagem" name="imagem" required>
         
                         <label for="tipo">Tipo:</label>
-                        <input type="text" id="tipo" name="tipo">
+                        <input type="text" id="tipo" name="tipo" required>
         
                         <button id="btnCadastrar" type="submit">Cadastrar</button>
         
@@ -49,19 +49,20 @@
                     <form action="/update/<%= pokemon.numero %>" method="POST">
         
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="<%= pokemon.nome%>">
+                        <input type="text" id="nome" name="nome" value="<%= pokemon.nome%>" required>
         
                         <label for="imagem">Link da imagem:</label>
-                        <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem%>">
+                        <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem%>" required>
         
                         <label for="tipo">Tipo:</label>
-                        <input type="text" id="tipo" name="tipo" value="<%= pokemon.tipo%>">
+                        <input type="text" id="tipo" name="tipo" value="<%= pokemon.tipo%>" required>
         
                         <button id="btnAtualizar" type="submit">Atualizar</button>
+                
                         </form>
                         <%}%>
                 </section>
-        
+
                 <section id="card">
         
                         <h2>Lista de Pokemons</h2>
@@ -75,6 +76,9 @@
                         </div>
                     <%  })  %>
                 </section>
+
+             
+                
             </div>
 
             

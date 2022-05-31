@@ -103,6 +103,25 @@ section#card div.card a#apagar:hover{
     color: #fff;
 }
 
+section#card div.card a#detalhe{
+    padding: .6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px #dc092c;
+    color: #dc092c;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+section#card div.card a#detalhe:hover{
+    background-color: #dc092c;
+    color: #fff;
+}
+
 section#card div.card img{
     width: 100%;
 }
@@ -182,3 +201,19 @@ footer a{
     font-size: 1rem;
     color: #000;
 }
+
+@media only screen and (max-width: 900px){
+
+header{
+    display: none;
+    visibility: hidden;
+}
+
+}
+@media only screen and (min-width: 900px) and (max-width: 1500px){
+
+    header{
+       width: 90%;
+    }
+    
+    }
