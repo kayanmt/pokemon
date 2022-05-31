@@ -9,9 +9,16 @@
 </head>
 <body>
 
-    <header>
-        <h1>Pokedex</h1>
-    </header>
+    <nav>
+        <ul>
+            <li><img src="/img/pokebola-go.png" alt=""></li>
+            <li><a href="/"><h1>Pokédex</h1></a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#card">Pokemons</a></li>
+        </ul>
+    </nav>
+
+    <header><img src="/img/banner.png" alt="banner"></header>
 
     <main>
         <section id="cadastro">
@@ -63,7 +70,8 @@
                         <img src="<%= pokemon.imagem %>" alt="">
                         <h3> <%= pokemon.nome%></h3>
                         <p><%= pokemon.tipo%></p>
-                        <a href="/detalhes/<%= pokemon.numero%>">Editar</a>
+                        <a id="editar"href="/detalhes/<%= pokemon.numero%>">Editar</a>
+                        <a id="apagar"href="/delete/<%= pokemon.numero%>">Apagar</a>
                         </div>
                     <%  })  %>
                 </section>
@@ -75,7 +83,10 @@
   
     </main>
     
-    
+    <footer>
+        <p>Todos os direitos reservados para KayCode</p>
+        <p>Dados retirados de <a href="https://www.pokemon.com/br/pokedex/">pokedex</a></p>
+    </footer>
 
 </body>
 </html>

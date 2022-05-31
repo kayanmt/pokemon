@@ -54,15 +54,14 @@ app.post("/add", (req, res) => {
     pokemon=req.body;
     pokemon.numero = pokedex.length + 1;
     pokedex.push(pokemon);
-
-    res.redirect("/");
+    res.redirect("/#card");
 
 });
 
 app.get("/detalhes/:numero", (req,res)=>{
     const numero= +req.params.numero;
     pokemon = pokedex.find((pokemon) => pokemon.numero===numero);
-    res.redirect("/");
+    res.redirect("/#cadastro");
 })
 
 app.post("/update/:numero", (req, res) => {
@@ -71,8 +70,14 @@ app.post("/update/:numero", (req, res) => {
     newPokemon.numero=numero+1;
     pokedex[numero]=newPokemon;
     pokemon=undefined;
-    res.redirect("/");
+    res.redirect("/#card");
 
+});
+
+app.get("/delete/:numero", (req, res) =>{
+    const numero= +req.params.numero-1;
+    delete pokedex[numero];
+    res.redirect("/#card");
 });
 
 app.listen(3000, ()=> 
