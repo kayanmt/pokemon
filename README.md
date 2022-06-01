@@ -1,1 +1,3 @@
 # pokemon
+
+Pokedex fornece informações sobre os pokemons, preenchendo os dados e pressionando o botão cadastrar no topo da tela, você adicionar pokemons novos na lista, pode editar um pokemon pressionando o botão a baixo do mesmo, editando os dados que julgar necessário, e pressionando o botão atualizar no formulário, ou exclu-lo apertando o botão apagar apertando o botão apagar em baixo do pokemon que deseja remover.
